@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="https://unpkg.com/vue"></script>
+<script src="todolist.js"></script>  
+<title>Productivity List Demo</title>
+</head>
+<body>
+    <div id="demo">
+        <h1>{{ headLine }}</h1>
+        <input type="text" size="25" v-model="newTodo" v-on:keyup.enter="addTodo" placeholder="Please add a todo.">
+        <button type="button" v-on:click="addTodo">Add Todo</button>
+        <hr>
+        <ul>
+        <li v-for="todo in todoList">
+        <lable>
+        <input type="checkbox" v-model="todo.checked">{{todo.text}}
+        </lable>
+        </li>
+        </ul>
+        <hr>
+        <p>You can change the title of your productivity list from here.</p>
+        <input v-model="headLine">
+    </div>
+      
+</body>
+</html>
